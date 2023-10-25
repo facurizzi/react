@@ -2,7 +2,7 @@ import React from "react";
 import Counter from "../Counter/Counter";
 
 
-const ItemDetail = ( {item}) => {
+const ItemDetail = ( {item,onAdd}) => {
 
     return (
         <div>
@@ -17,7 +17,7 @@ const ItemDetail = ( {item}) => {
             <p>
              Category:   {item.category}
             </p>
-            <Counter />
+            <Counter onAdd={onAdd} />
         </div>
     
     )

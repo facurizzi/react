@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from "./style.module.css"
 import Nav from "./components/NavBar/NavBar"
 import ItemListContainer from './components/Items/ItemListContainer';
@@ -11,21 +11,25 @@ import About from './components/pages/About';
 import Products from './components/pages/Products';
 import {Route, Routes} from 'react-router'
 import Detail from './components/pages/Detail';
+import UserContext from './context/UserContext';
+import CartContextProvider from './context/cartContext/CartContextProvider';
+import Cart from './components/pages/Cart';
 
 function App() {
   
   return (
     <div className="App">
-      <NavBar />
-      <Routes>
-        <Route path='/' element={<Home />}/>
-        <Route path='/About' element={<About />}/>
-        <Route path='/Contact' element={<Contact />}/>
-        <Route path='/Products' element={<Products />}/>
-        <Route path='/Detail/:id' element={<Detail/>}/>
-      </Routes>
-      
-      
+      <CartContextProvider>
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path='/About' element={<About />}/>
+          <Route path='/Contact' element={<Contact />}/>
+          <Route path='/Products' element={<Products />}/>
+          <Route path='/Detail/:id' element={<Detail/>}/>
+          <Route path='/cart' element={<Cart />}/>
+        </Routes>
+        </CartContextProvider>
       {}
     </div>
       );

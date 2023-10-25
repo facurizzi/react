@@ -8,6 +8,7 @@ import Home from '../pages/Home';
 import Products from '../pages/Products';
 import Contact from '../pages/Contact';
 import About from '../pages/About';
+import Cart from '../pages/Cart';
 import CartWidget from './CartWidget';
 
 
@@ -23,6 +24,7 @@ const NavBar = () => {
               <Link style={{textDecoration : "none", marginRight:"10px"}} to="/Products">Productos</Link>
               <Link style={{textDecoration : "none", marginRight:"10px"}} to="/Contact">Contacto</Link>
               <Link style={{textDecoration : "none", marginRight:"10px"}} to="/About">Sobre Nosotros</Link>
+              <Link style={{textDecoration : "none", marginRight:"10px"}} to="/cart">Cart</Link>
             </Nav>
           </Navbar.Collapse>
           <CartWidget />

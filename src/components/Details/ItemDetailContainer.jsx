@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
+import CartContext from "../../context/cartContext/CartContext";
 
 
 const ItemDetailContainer = ({id}) => {
@@ -16,9 +17,20 @@ const ItemDetailContainer = ({id}) => {
       useEffect(() => {
         getData()
       },[])
-      console.log(item)
+    
+
+      const {addItem} = useContext(CartContext)
+      
+
+      const onAdd =(q)=>{
+        addItem(item,q)
+      }
     return (
-        <ItemDetail item={item}/>
+      <>
+      item!==null && 
+      <ItemDetail item={item} onAdd={onAdd} />
+      </>
+        
     
     )
 }
