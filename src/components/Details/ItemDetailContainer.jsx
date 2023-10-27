@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import CartContext from "../../context/cartContext/CartContext";
+import {doc,getDoc,getFirestore} from "firebase/firestore";
 
 
 const ItemDetailContainer = ({id}) => {
-
-    const [item , setItem] = useState({})
-    
+  const [item , setItem] = useState(null)
+/*
     const getData = () => {
         fetch(`https://fakestoreapi.com/products/${id}`)
         .then( response => response.json())
@@ -17,20 +17,47 @@ const ItemDetailContainer = ({id}) => {
       useEffect(() => {
         getData()
       },[])
-    
+ 
+*/
+const onAdd =(q)=>{
+  addItem(item,q)
+}
+const {addItem} = useContext(CartContext)
 
-      const {addItem} = useContext(CartContext)
+useEffect(( ) => {
+  const db=getFirestore()
+  
+
+  const itemRef = doc(db,"items",id)
+
+  getDoc(itemRef)
+    .then((snapshot)=> {
+      console.log(snapshot.exists())
+      if(snapshot.exists()){
+
+        setItem({
+          id: snapshot.id,
+          ...snapshot.data()
+        })
+      }
+    })
+    .catch((err)=>console.log(err))
+  
+
+},[])
+
+console.log(item)
       
 
-      const onAdd =(q)=>{
-        addItem(item,q)
-      }
+     
     return (
       <>
+      {
       item!==null && 
       <ItemDetail item={item} onAdd={onAdd} />
+      }
       </>
-        
+      
     
     )
 }

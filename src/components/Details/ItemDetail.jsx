@@ -5,11 +5,11 @@ import Counter from "../Counter/Counter";
 const ItemDetail = ( {item,onAdd}) => {
 
     return (
-        <div>
-            <h5>{item.title}</h5>
-            <img src={item.image}/>
+        <div className="{styles.contianer}">
+            <h5 className="{styles.title}">{item.name}</h5>
+           { /*<img src={item.image}/>*/}
             <p>
-              Description:  {item.description}
+              Stock  {item.stock}
             </p>
             <p>
               Price:  {item.price}

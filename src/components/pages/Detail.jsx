@@ -4,6 +4,7 @@ import ItemDetailContainer from '../Details/ItemDetailContainer'
 
 const Detail = () => {
   const {id} = useParams()
+
   return (
     <div>
         Detail

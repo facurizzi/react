@@ -23,11 +23,14 @@ const ItemList = ({items}) => {
 const CardList = ({item}) => {
     return (
         <Card style={{ width: '18rem' }} className='mb-3'>
-          <Card.Img variant="top" src={item.image} style={{height:'40%'}}/>
+          {/*<Card.Img variant="top" src={item.image} style={{height:'40%'}}/>*/}
           <Card.Body>
-            <Card.Title>{item.title}</Card.Title>
+            <Card.Title>{item.name}</Card.Title>
             <Card.Text>
-              {item.description}
+              Stock :{item.stock}
+            </Card.Text>
+            <Card.Text>
+              Precio :{item.price}
             </Card.Text>
             <Link to={`/Detail/${item.id}`}>
             <Button variant="primary">Ver detalles</Button>
