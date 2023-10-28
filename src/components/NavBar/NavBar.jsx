@@ -14,7 +14,7 @@ import CartWidget from './CartWidget';
 
 const NavBar = () => {
   return (
-      <Navbar expand="lg" className="bg-body-tertiary" data-bs-theme="dark" >
+      <Navbar expand="lg" className="bg-body-tertiary fixed-top" data-bs-theme="dark" >
         <Container>
           <Navbar.Brand href="#home">Cosaco PETSHOP</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

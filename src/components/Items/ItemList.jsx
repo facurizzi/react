@@ -22,7 +22,7 @@ const ItemList = ({items}) => {
 
 const CardList = ({item}) => {
     return (
-        <Card style={{ width: '18rem' }} className='mb-3'>
+        <Card style={{ width: '18rem', height:'55vh' }} className='mb-3 border-primary .bg-advertencia'>
           <Card.Img variant="top" src={item.image} style={{height:'40%'}}/>
           <Card.Body>
             <Card.Title>{item.name}</Card.Title>

@@ -1,3 +1,4 @@
 .bg-body-tertiary{
     background-color: gray;
+    min-width: 100%;
 }

@@ -43,14 +43,14 @@ useEffect( () => {
 
   return (
     <Container>
+      <h1>{greeting}</h1>
       <Row>
         {
           items.length > 0 && 
         <ItemList items={items} />
         }
       </Row>
-        <h1>{greeting}</h1>
-        <p >Bienvenido a nuestra tienda en línea.</p>
+        
     </Container>
   );
 };
