@@ -31,7 +31,7 @@ useEffect( () => {
   const db =getFirestore()
 
   const itemCollection = collection(db,"items")
-  const q = query(itemCollection,where("price","<",1000))
+  const q = query(itemCollection)
 
   getDocs(q)
     .then(snapshot => {

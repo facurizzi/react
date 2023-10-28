@@ -14,6 +14,7 @@ import Detail from './components/pages/Detail';
 import UserContext from './context/UserContext';
 import CartContextProvider from './context/cartContext/CartContextProvider';
 import Cart from './components/pages/Cart';
+import Checkout from './components/pages/Checkout';
 
 function App() {
   
@@ -28,6 +29,7 @@ function App() {
           <Route path='/Products' element={<Products />}/>
           <Route path='/Detail/:id' element={<Detail/>}/>
           <Route path='/cart' element={<Cart />}/>
+          <Route path='/checkout/:orderId' element={<Checkout />}/>
         </Routes>
         </CartContextProvider>
       {}

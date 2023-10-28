@@ -23,7 +23,7 @@ const ItemList = ({items}) => {
 const CardList = ({item}) => {
     return (
         <Card style={{ width: '18rem' }} className='mb-3'>
-          {/*<Card.Img variant="top" src={item.image} style={{height:'40%'}}/>*/}
+          <Card.Img variant="top" src={item.image} style={{height:'40%'}}/>
           <Card.Body>
             <Card.Title>{item.name}</Card.Title>
             <Card.Text>
@@ -36,7 +36,7 @@ const CardList = ({item}) => {
             <Button variant="primary">Ver detalles</Button>
             </Link>
           </Card.Body>
-          <Counter />
+          {/* <Counter /> */}
         </Card>
       );
 }

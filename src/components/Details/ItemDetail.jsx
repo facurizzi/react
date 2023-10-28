@@ -7,9 +7,9 @@ const ItemDetail = ( {item,onAdd}) => {
     return (
         <div className="{styles.contianer}">
             <h5 className="{styles.title}">{item.name}</h5>
-           { /*<img src={item.image}/>*/}
+           <img src={item.image}/>
             <p>
-              Stock  {item.stock}
+              Stock:  {item.stock}
             </p>
             <p>
               Price:  {item.price}

@@ -4,9 +4,7 @@ import ItemListContainer from '../Items/ItemListContainer'
 const Home = () => {
   return (
     <div>
-      Home
       <ItemListContainer greeting="¡Bienvenidos la tienda de COSACO PETSHOP!" />
-
     </div>
   )
 }

@@ -7,7 +7,6 @@ const Detail = () => {
 
   return (
     <div>
-        Detail
         <ItemDetailContainer  id={id}/>
 
     </div>
