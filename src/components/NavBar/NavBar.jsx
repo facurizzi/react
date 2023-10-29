@@ -21,9 +21,9 @@ const NavBar = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Link style={{textDecoration : "none", marginRight:"10px"}} to="/">Inicio</Link>
-              <Link style={{textDecoration : "none", marginRight:"10px"}} to="/Products">Productos</Link>
-              <Link style={{textDecoration : "none", marginRight:"10px"}} to="/Contact">Contacto</Link>
-              <Link style={{textDecoration : "none", marginRight:"10px"}} to="/About">Sobre Nosotros</Link>
+              <Link style={{textDecoration : "none", marginRight:"10px"}} to="/category/Alimento">Alimento</Link>
+              <Link style={{textDecoration : "none", marginRight:"10px"}} to="/category/Accesorio">Accesorios</Link>
+              <Link style={{textDecoration : "none", marginRight:"10px"}} to="/About">Varios</Link>
               <Link style={{textDecoration : "none", marginRight:"10px"}} to="/cart">Cart</Link>
             </Nav>
           </Navbar.Collapse>

@@ -6,6 +6,10 @@ import Counter from "../Counter/Counter";
 import { Link } from "react-router-dom";
 
 const ItemList = ({items}) => {
+
+  if (items.length > 0) {
+    console.log('Categoría presente:', items[0].category); // Asumiendo que la categoría está en el primer elemento
+  }
     return (
         <>
         {

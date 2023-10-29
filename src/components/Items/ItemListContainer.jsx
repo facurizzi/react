@@ -6,44 +6,33 @@ import ItemList from './ItemList';
 import {collection,getDocs,getFirestore,query,where} from "firebase/firestore"
 
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = ({category}) => {
   const [items, setItems] = useState([])
-/*
-  const[items, setItems] = useState([])
-
-  const getData = () => {
-    fetch("https://fakestoreapi.com/products")
-    .then( response => response.json())
-    .then( data => setItems(data))
-    .catch( error => console.log(error))
-
-  }
-
-  useEffect( () => {
-    getData()
-
-  }, [])
-  console.log(items)
-  */
-
 
 useEffect( () => {
   const db =getFirestore()
 
   const itemCollection = collection(db,"items")
-  const q = query(itemCollection)
+  // const q = query(itemCollection)
+  
+  // Define una consulta que filtre por la categoría
+  
+  const q = query(itemCollection, where("category", "==", category));
+  // Define una consulta que filtre por la categoría solo si la categoría está presente
 
-  getDocs(q)
+   getDocs(q)
     .then(snapshot => {
       const allData =snapshot.docs.map(document => ({id: document.id, ...document.data()}))
       setItems(allData)
+       .catch((error) => {
+        console.error("Error fetching data:", error);
+       });
       
-    })
-},[])
+     })
+  },[category])
 
   return (
     <Container>
-      <h1>{greeting}</h1>
       <Row>
         {
           items.length > 0 && 
